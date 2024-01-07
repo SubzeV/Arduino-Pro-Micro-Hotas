@@ -11,9 +11,9 @@ This project is still in development so expect big changes to happen every so of
 ## The joystick mechanism
 The joystick consists of many modular parts.
 
-The X and Y axis are shown in different colors, as well as the sensor parts being colored in darker shades of the corresponding axis shown below:
-![Image of the models with X and Y axis in different colors](https://github.com/SubzeV/Arduino-Pro-Micro-Hotas/blob/07175cca816d11f0451794dd7dbbb4add96e10da/Renders/24-01-01_11-59_Explainer.png)
-(Please note that the required M4 screws and nuts as well as the latest changes are not shown in this image)
+Render of the current joystick base:
+![Image of the models](https://github.com/SubzeV/Arduino-Pro-Micro-Hotas/blob/ff6ad561d5e4cdb55cf3d55741bce47158e4f9bd/Renders/24-01-07_11-31.png)
+(Please note that not all required M4 screws and nuts might be visible in this image)
 
 ## The throttle mechanism
 This part is still a W.I.P. and documentation will be updated once ready
