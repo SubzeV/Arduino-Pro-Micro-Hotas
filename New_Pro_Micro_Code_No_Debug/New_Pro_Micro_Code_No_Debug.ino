@@ -99,57 +99,57 @@ void buttonChecker(int button) {
 
 // Read values smoothly
 float smoothAnalogReadX(int pin) {
-  const int numReadings = smoothness;// More = smoother but less responsive
-  static int readings[numReadings];  // Array to store readings
-  static int index = 0;              // Index for the readings array
-  static int total = 0;              // Running total of readings
+  const int numReadings = smoothness; // More = smoother but less responsive
+  static int readings[numReadings];   // Array to store readings
+  static int index = 0;               // Index for the readings array
+  static int total = 0;               // Running total of readings
 
-  total = total - readings[index];   // Subtract the oldest reading
-  readings[index] = analogRead(pin); // Read from the sensor
-  total = total + readings[index];   // Add the new reading
-  index = (index + 1) % numReadings; // Move to the next index
+  total = total - readings[index];    // Subtract the oldest reading
+  readings[index] = analogRead(pin);  // Read from the sensor
+  total = total + readings[index];    // Add the new reading
+  index = (index + 1) % numReadings;  // Move to the next index
 
-  return total / numReadings;        // Return the average
+  return total / numReadings;         // Return the average
 }
 
 float smoothAnalogReadY(int pin) {
-  const int numReadings = smoothness;         // More = smoother but less responsive
-  static int readings[numReadings];  // Array to store readings
-  static int index = 0;              // Index for the readings array
-  static int total = 0;              // Running total of readings
+  const int numReadings = smoothness; // More = smoother but less responsive
+  static int readings[numReadings];   // Array to store readings
+  static int index = 0;               // Index for the readings array
+  static int total = 0;               // Running total of readings
 
-  total = total - readings[index];   // Subtract the oldest reading
-  readings[index] = analogRead(pin); // Read from the sensor
-  total = total + readings[index];   // Add the new reading
-  index = (index + 1) % numReadings; // Move to the next index
+  total = total - readings[index];    // Subtract the oldest reading
+  readings[index] = analogRead(pin);  // Read from the sensor
+  total = total + readings[index];    // Add the new reading
+  index = (index + 1) % numReadings;  // Move to the next index
 
-  return total / numReadings;        // Return the average
+  return total / numReadings;         // Return the average
 }
 
 float smoothAnalogReadZ(int pin) {
-  const int numReadings = smoothness;         // More = smoother but less responsive
-  static int readings[numReadings];  // Array to store readings
-  static int index = 0;              // Index for the readings array
-  static int total = 0;              // Running total of readings
+  const int numReadings = smoothness; // More = smoother but less responsive
+  static int readings[numReadings];   // Array to store readings
+  static int index = 0;               // Index for the readings array
+  static int total = 0;               // Running total of readings
 
-  total = total - readings[index];   // Subtract the oldest reading
-  readings[index] = analogRead(pin); // Read from the sensor
-  total = total + readings[index];   // Add the new reading
-  index = (index + 1) % numReadings; // Move to the next index
+  total = total - readings[index];    // Subtract the oldest reading
+  readings[index] = analogRead(pin);  // Read from the sensor
+  total = total + readings[index];    // Add the new reading
+  index = (index + 1) % numReadings;  // Move to the next index
 
-  return total / numReadings;        // Return the average
+  return total / numReadings;         // Return the average
 }
 
 float smoothAnalogReadThrottle(int pin) {
-  const int numReadings = smoothness;         // More = smoother but less responsive
-  static int readings[numReadings];  // Array to store readings
-  static int index = 0;              // Index for the readings array
-  static int total = 0;              // Running total of readings
+  const int numReadings = smoothness; // More = smoother but less responsive
+  static int readings[numReadings];   // Array to store readings
+  static int index = 0;               // Index for the readings array
+  static int total = 0;               // Running total of readings
 
-  total = total - readings[index];   // Subtract the oldest reading
-  readings[index] = analogRead(pin); // Read from the sensor
-  total = total + readings[index];   // Add the new reading
-  index = (index + 1) % numReadings; // Move to the next index
+  total = total - readings[index];    // Subtract the oldest reading
+  readings[index] = analogRead(pin);  // Read from the sensor
+  total = total + readings[index];    // Add the new reading
+  index = (index + 1) % numReadings;  // Move to the next index
 
-  return total / numReadings;        // Return the average
+  return total / numReadings;         // Return the average
 }
