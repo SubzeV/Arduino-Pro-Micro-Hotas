@@ -62,19 +62,19 @@ void loop() {
     delay(1000 / refreshRate);
 
     //Send the X axis through the joystick interface
-    if (smoothXData < 560) {
-      Joystick.setXAxis(map(smoothXData, 270, 560, 0, 510));
-    } else if (smoothXData > 610) {
-      Joystick.setXAxis(map(smoothXData, 610, 842, 512, 1023));
+    if (smoothXData < 495) {
+      Joystick.setXAxis(map(smoothXData, 0, 495, 1023, 512));
+    } else if (smoothXData > 499) {
+      Joystick.setXAxis(map(smoothXData, 499, 1023, 510, 0));
     } else {
       Joystick.setXAxis(511);
     }
 
     //Send the Y axis through the joystick interface
-    if (smoothYData < 542) {
-      Joystick.setYAxis(map(smoothYData, 310, 542, 1023, 512));
-    } else if (smoothYData > 600) {
-      Joystick.setYAxis(map(smoothYData, 600, 770, 510, 0));
+    if (smoothYData < 495) {
+      Joystick.setYAxis(map(smoothYData, 0, 495, 1023, 512));
+    } else if (smoothYData > 499) {
+      Joystick.setYAxis(map(smoothYData, 499, 1023, 510, 0));
     } else {
       Joystick.setYAxis(511);
     }
@@ -101,7 +101,7 @@ void loop() {
 
 // Pause logic
 void togglePause() {
-  if (digitalRead(buttonPin) == HIGH) {
+  if (digitalRead(buttonInterruptPin) == HIGH) {
     // Button is pressed, toggle pause state
     paused = !paused;
   }
