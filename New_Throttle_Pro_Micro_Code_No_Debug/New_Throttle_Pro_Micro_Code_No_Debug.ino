@@ -4,15 +4,15 @@
 Joystick_ Joystick;
 
 // Button pins collection
-const int buttonPins[] = { 15, 9, 10, 14, 16 };
-const int buttonPinsSize = 5;
+const int buttonPins[] = { 15, 14, 16, 10, 9, 8 };
+const int buttonPinsSize = 6;
 
 // Button state and previous state collections
-bool buttonStates[] = { LOW, LOW, LOW, LOW, LOW };
-const int buttonStatesSize = 5;
+bool buttonStates[] = { LOW, LOW, LOW, LOW, LOW, LOW };
+const int buttonStatesSize = 6;
 
-bool lastButtonStates[] = { HIGH, HIGH, HIGH, HIGH, HIGH };
-const int lastButtonStatesSize = 5;
+bool lastButtonStates[] = { HIGH, HIGH, HIGH, HIGH, HIGH, HIGH };
+const int lastButtonStatesSize = 6;
 
 // Set the smoothness of the readings (Higher = smoother but less responsive)
 const int smoothness = 8;
@@ -31,7 +31,11 @@ void setup() {
   attachInterrupt(digitalPinToInterrupt(buttonInterruptPin), togglePause, CHANGE);
 
   // Set up button pins as pullup inputs
-  for (int i = 0; i < buttonPinsSize; i++) {
+  for (int i = 3; i < buttonPinsSize; i++) {
+    pinMode(buttonPins[i], INPUT_PULLUP);
+  }
+  // Set up button pins as inputs
+  for (int i = 0; i < 3; i++) {
     pinMode(buttonPins[i], INPUT_PULLUP);
   }
 }
@@ -112,11 +116,15 @@ void switchChecker(int button) {
   if (buttonStates[button] == LOW && lastButtonStates[button] == HIGH) {
     lastButtonStates[button] = LOW;
     Joystick.pressButton(button);
+    // Serial.println("Switch pressed");
+    delay(10);
     Joystick.releaseButton(button);
   }
   if (buttonStates[button] == HIGH && lastButtonStates[button] == LOW) {
     lastButtonStates[button] = HIGH;
     Joystick.pressButton(button);
+    // Serial.println("Switch released");
+    delay(10);
     Joystick.releaseButton(button);
   }
 }
