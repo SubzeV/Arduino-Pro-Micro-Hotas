@@ -25,7 +25,7 @@ volatile bool paused = false;
 void setup() {
   Joystick.begin();
 
-  Serial.begin(9600);
+  // Serial.begin(9600);
 
   pinMode(buttonInterruptPin, INPUT);
   attachInterrupt(digitalPinToInterrupt(buttonInterruptPin), togglePause, CHANGE);

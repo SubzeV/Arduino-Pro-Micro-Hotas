@@ -21,7 +21,7 @@ const int smoothness = 8;
 void setup() {
   Joystick.begin();
 
-  Serial.begin(9600);
+  // Serial.begin(9600);
 
   // Set up button pins as pullup inputs
   for (int i = 0; i < buttonPinsSize; i++) {
