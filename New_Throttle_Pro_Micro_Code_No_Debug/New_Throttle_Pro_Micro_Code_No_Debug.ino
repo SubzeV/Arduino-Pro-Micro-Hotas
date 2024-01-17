@@ -39,10 +39,10 @@ void setup() {
 // Main program loop
 void loop() {
   if (!paused) {
-    int smoothXData = smoothAnalogReadX(A0);
-    int smoothYData = smoothAnalogReadY(A1);
+    int smoothXData = smoothAnalogReadX(A1);
+    int smoothYData = smoothAnalogReadY(A2);
     // int smoothZData = smoothAnalogReadZ(A3);
-    int smoothThrottleData = smoothAnalogReadThrottle(A2);
+    int smoothThrottleData = smoothAnalogReadThrottle(A3);
 
     for (int i = 0; i < buttonStatesSize; i++) {
       buttonStates[i] = digitalRead(buttonPins[i]);
@@ -89,10 +89,10 @@ void loop() {
     // }
 
     //Send the Throttle axis through the joystick interface
-    if (smoothThrottleData < 495) {
-      Joystick.setThrottle(map(smoothThrottleData, 0, 495, 1023, 512));
-    } else if (smoothThrottleData > 499) {
-      Joystick.setThrottle(map(smoothThrottleData, 499, 1023, 510, 0));
+    if (smoothThrottleData < 455) {
+      Joystick.setThrottle(map(smoothThrottleData, 0, 455, 0, 510));
+    } else if (smoothThrottleData > 540) {
+      Joystick.setThrottle(map(smoothThrottleData, 540, 1023, 512, 1024));
     } else {
       Joystick.setThrottle(511);
     }
