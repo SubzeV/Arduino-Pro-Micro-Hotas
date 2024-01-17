@@ -78,7 +78,7 @@ void loop() {
   //Send the Throttle axis through the joystick interface
   if (smoothThrottleData < 495) {
     Joystick.setThrottle(map(smoothThrottleData, 0, 495, 1023, 512));
-  } else if (smoothZData > 499) {
+  } else if (smoothThrottleData > 499) {
     Joystick.setThrottle(map(smoothThrottleData, 499, 1023, 510, 0));
   } else {
     Joystick.setThrottle(511);
