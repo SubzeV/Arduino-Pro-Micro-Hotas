@@ -11,10 +11,6 @@ This project is still in development so expect big changes to happen every so of
 ## The joystick mechanism
 The joystick consists of many modular parts.
 
-Render of the current joystick base:
-![Image of the joystick base](https://github.com/SubzeV/Arduino-Pro-Micro-Hotas/blob/ff6ad561d5e4cdb55cf3d55741bce47158e4f9bd/Renders/24-01-07_11-31.png)
-(Please note that not all required M4 screws and nuts might be visible in this image)
-
 A picture of the joystick and throttle setup IRL:
 ![Image of the joystick](https://github.com/SubzeV/Arduino-Pro-Micro-Hotas/blob/49579b332c7ec3b0158f528e7e06c42ac2194266/Pictures/20240117_224643.jpg)
 
